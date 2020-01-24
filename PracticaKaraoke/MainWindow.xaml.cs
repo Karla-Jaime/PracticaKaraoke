@@ -38,12 +38,22 @@ namespace PracticaKaraoke
         {
             InitializeComponent();
             timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(500);
+            //Para añadir respuesta a eventos
+            timer.Tick += Timer_Tick;
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            
         }
 
         private void BtnReproducir_Click(object sender, RoutedEventArgs e)
         {
             pbCancion.Visibility = Visibility.Visible;
-
+            reader = new AudioFileReader(reader.FileName();
+            
+            output = new WaveOut();
 
         }
     }
