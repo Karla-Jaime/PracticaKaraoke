@@ -95,7 +95,7 @@ namespace PracticaKaraoke
             {
                 txtLyrics.Text = "I hate this part, paper hearts /n And I'll hold a piece of yours /n Don't think I would just forget about it ";
             }
-            else if (reader.CurrentTime == TimeSpan.FromSeconds(150))
+            else if (reader.CurrentTime == TimeSpan.FromSeconds(182))
             {
                 txtLyrics.Text = "/n Hoping that you won't forget";
             }
