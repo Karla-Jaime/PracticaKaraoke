@@ -55,6 +55,50 @@ namespace PracticaKaraoke
             {
                 txtLyrics.Text = "Our life was cutting through so loud Memories are playing in my dull mind I hate this part, paper hearts";
             }
+            else if (reader.CurrentTime == TimeSpan.FromSeconds(48))
+            {
+                txtLyrics.Text = "And I'll hold a piece of yours Don't think I would just forget about it Hoping that you won't forget about it";
+            }
+            else if (reader.CurrentTime == TimeSpan.FromSeconds(59))
+            {
+                txtLyrics.Text = "Hoping that you won't forget about it";
+            }
+            else if (reader.CurrentTime == TimeSpan.FromSeconds(76))
+            {
+                txtLyrics.Text = "Everything is gray under these skies Wet mascara Hiding every cloud under a smile  When there's cameras";
+            }
+            else if (reader.CurrentTime == TimeSpan.FromSeconds(89))
+            {
+                txtLyrics.Text = "And I just can't reach out to tell you  That I always wonder what you're up to";
+            }
+            else if (reader.CurrentTime == TimeSpan.FromSeconds(104))
+            {
+                txtLyrics.Text = "Pictures I'm living through for now /n Trying to remember all the good times/n Our life was cutting through so loud /n Memories are playing in my dull mind";
+            }
+            else if (reader.CurrentTime == TimeSpan.FromSeconds(117))
+            {
+                txtLyrics.Text = "I hate this part, paper hearts /n And I'll hold a piece of yours /n Don't think I would just forget about it /n Hoping that you won't forget";
+            }
+            else if (reader.CurrentTime == TimeSpan.FromSeconds(134))
+            {
+                txtLyrics.Text = "I live through pictures as if /n I was right there by your side  /nBut you'll be good without me and if /n I could just give it some time";
+            }
+            else if (reader.CurrentTime == TimeSpan.FromSeconds(150))
+            {
+                txtLyrics.Text = "I'll be alright";
+            }
+            else if (reader.CurrentTime == TimeSpan.FromSeconds(165))
+            {
+                txtLyrics.Text = "Pictures I'm living through for now /n Trying to remember all the good times/n Our life was cutting through so loud /n Memories are playing in my dull mind";
+            }
+            else if (reader.CurrentTime == TimeSpan.FromSeconds(178))
+            {
+                txtLyrics.Text = "I hate this part, paper hearts /n And I'll hold a piece of yours /n Don't think I would just forget about it ";
+            }
+            else if (reader.CurrentTime == TimeSpan.FromSeconds(150))
+            {
+                txtLyrics.Text = "/n Hoping that you won't forget";
+            }
         }
 
         private void BtnReproducir_Click(object sender, RoutedEventArgs e)
