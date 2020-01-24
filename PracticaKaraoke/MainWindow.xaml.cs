@@ -39,13 +39,22 @@ namespace PracticaKaraoke
             InitializeComponent();
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(500);
+            Duration duration = new Duration(TimeSpan.FromSeconds(10));
             //Para añadir respuesta a eventos
             timer.Tick += Timer_Tick;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            
+
+            if (reader.CurrentTime == TimeSpan.FromSeconds(0.19))
+            {
+                txtLyrics.Text = "Something in me knew that it was real Frozen in my head Pictures I'm living through for now Trying to remember all the good times";
+            }
+            else if (reader.CurrentTime == TimeSpan.FromSeconds(0.38))
+            {
+                txtLyrics.Text = "Our life was cutting through so loud Memories are playing in my dull mind I hate this part, paper hearts";
+            }
         }
 
         private void BtnReproducir_Click(object sender, RoutedEventArgs e)
@@ -55,6 +64,8 @@ namespace PracticaKaraoke
             reader = new AudioFileReader(File);
             output.Init(reader);
             output.Play();
+
+           
 
            // pbCancion.Value = 
 

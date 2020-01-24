@@ -8,7 +8,10 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="Azure">
         <Button x:Name="btnReproducir" Content="Reproducir" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="679,25,0,0" Click="BtnReproducir_Click"/>
-        <ProgressBar x:Name="pbCancion" HorizontalAlignment="Left" Height="20" Margin="87,25,0,0" VerticalAlignment="Top" Width="509" ScrollViewer.VerticalScrollBarVisibility="Hidden" ValueChanged="PbCancion_ValueChanged"/>
+        <ProgressBar x:Name="pbCancion" HorizontalAlignment="Left" Height="20" Margin="87,25,0,0" VerticalAlignment="Top" Width="509" ScrollViewer.VerticalScrollBarVisibility="Hidden" ValueChanged="PbCancion_ValueChanged" Maximum="100" Minimum="0" Background="Black">
+            
+        </ProgressBar>
+
         <TextBlock x:Name="txtLyrics" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="66,91,0,0" Height="254" Width="656" FontSize="30" FontFamily="Arial"/>
 
     </Grid>
