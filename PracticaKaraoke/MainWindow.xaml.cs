@@ -51,10 +51,14 @@ namespace PracticaKaraoke
         private void BtnReproducir_Click(object sender, RoutedEventArgs e)
         {
             pbCancion.Visibility = Visibility.Visible;
-            reader = new AudioFileReader(reader.FileName();
-            
-            output = new WaveOut();
+            string File = @"paper-hearts-official-video.mp3";
+            reader = new AudioFileReader(File);
+            output.Init(reader);
+            output.Play();
+
+           // pbCancion.Value = 
 
         }
+
     }
 }
