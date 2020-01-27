@@ -27,9 +27,7 @@ namespace PracticaKaraoke
     public partial class MainWindow : Window
     {
         DispatcherTimer timer;
-        //Lector de archivos
         AudioFileReader reader;
-        //Comunicacion con la tarjeta de audio exclusiva
         WaveOut output;
 
         bool dragging = false;
@@ -51,7 +49,7 @@ namespace PracticaKaraoke
 
         private void BtnReproducir_Click(object sender, RoutedEventArgs e)
         {
-            string file = @"thinkingOutLoud.mp3";
+            string file = @"paper-hearts-official-video.mp3";
             reader = new AudioFileReader(file);
             output = new WaveOut();
 
@@ -62,6 +60,14 @@ namespace PracticaKaraoke
             pbCancion.Maximum = reader.TotalTime.TotalSeconds;
             pbCancion.Value = reader.CurrentTime.TotalSeconds;
 
+            if (reader.CurrentTime == TimeSpan.FromSeconds(0.19))
+            {
+                txtLyrics.Text = "Something in me knew that it was real Frozen in my head Pictures I'm living through for now Trying to remember all the good times";
+            }
+            else if (reader.CurrentTime == TimeSpan.FromSeconds(0.38))
+            {
+                txtLyrics.Text = "Our life was cutting through so loud Memories are playing in my dull mind I hate this part, paper hearts";
+            }
             timer.Start();
         }
 
@@ -73,12 +79,12 @@ namespace PracticaKaraoke
             output.Dispose();
         }
 
-        private void ProgressBar_DragStarted(object sender, System.Windows.Controls.Primitives.DragStartedEventArgs e)
+        private void PbCancion_DragStarted(object sender, System.Windows.Controls.Primitives.DragStartedEventArgs e)
         {
             dragging = true;
         }
 
-        private void ProgressBar_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
+        private void PbCancion_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
         {
             dragging = false;
             if (reader != null && output != null && output.PlaybackState != PlaybackState.Stopped)
@@ -86,5 +92,5 @@ namespace PracticaKaraoke
                 reader.CurrentTime = TimeSpan.FromSeconds(pbCancion.Value);
             }
         }
-    }
+    }  
 }
