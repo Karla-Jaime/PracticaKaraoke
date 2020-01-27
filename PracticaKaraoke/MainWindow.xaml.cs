@@ -45,12 +45,67 @@ namespace PracticaKaraoke
             {
                 pbCancion.Value = reader.CurrentTime.TotalSeconds;
             }
+
+
+            if (pbCancion.Value >= 19 && pbCancion.Value <= 20)
+            {
+                txtLyrics.Text = "Something in me knew that it was real \nFrozen in my head \n Pictures I'm living through for now \nTrying to remember all the good times";
+            }
+            else if (pbCancion.Value >= 38 && pbCancion.Value <= 39)
+            {
+                txtLyrics.Text = "Our life was cutting through so loud\n Memories are playing in my dull mind\n I hate this part, paper hearts";
+            }
+            else if (pbCancion.Value >= 48 && pbCancion.Value <= 49)
+            {
+                txtLyrics.Text = "And I'll hold a piece of yours\n Don't think I would just forget about it\n Hoping that you won't forget about it";
+            }
+            else if (pbCancion.Value >= 59 && pbCancion.Value <= 60)
+            {
+                txtLyrics.Text = "Hoping that you won't forget about it";
+            }
+            else if (pbCancion.Value >= 76 && pbCancion.Value <= 77)
+            {
+                txtLyrics.Text = "Everything is gray under these skies\n Wet mascara Hiding every cloud under a smile  When there's cameras";
+            }
+            else if (pbCancion.Value >= 88 && pbCancion.Value <= 89)
+            {
+                txtLyrics.Text = "And I just can't reach out to tell you  \nThat I always wonder what you're up to";
+            }
+            else if (pbCancion.Value >= 104 && pbCancion.Value <=  105)
+            {
+                txtLyrics.Text = "Pictures I'm living through for now \n Trying to remember all the good times\n Our life was cutting through so loud \n Memories are playing in my dull mind";
+            }
+            else if (pbCancion.Value >= 117 && pbCancion.Value <= 118)
+            {
+                txtLyrics.Text = "I hate this part, paper hearts \n And I'll hold a piece of yours \n Don't think I would just forget about it \n Hoping that you won't forget";
+            }
+            else if (pbCancion.Value >= 134 && pbCancion.Value <= 135)
+            {
+                txtLyrics.Text = "I live through pictures as if \n I was right there by your side  \n But you'll be good without me and if \n I could just give it some time";
+            }
+            else if (pbCancion.Value >= 150 && pbCancion.Value <= 151)
+            {
+                txtLyrics.Text = "I'll be alright";
+            }
+            else if (pbCancion.Value >= 165 && pbCancion.Value <= 166)
+            {
+                txtLyrics.Text = "Pictures I'm living through for now \n Trying to remember all the good times\n Our life was cutting through so loud \n Memories are playing in my dull mind";
+            }
+            else if (pbCancion.Value >= 177 && pbCancion.Value <= 178)
+            {
+                txtLyrics.Text = "I hate this part, paper hearts \n And I'll hold a piece of yours \n Don't think I would just forget about it ";
+            }
+            else if (pbCancion.Value >= 181 && pbCancion.Value <= 182)
+            {
+                txtLyrics.Text = "\nn Hoping that you won't forget";
+            }
+
         }
 
         private void BtnReproducir_Click(object sender, RoutedEventArgs e)
         {
-            string file = @"paper-hearts-official-video.mp3";
-            reader = new AudioFileReader(file);
+            string File = @"Archivo/paper-hearts-official-video.mp3";
+            reader = new AudioFileReader(File);
             output = new WaveOut();
 
             output.PlaybackStopped += Output_PlaybackStopped;
@@ -59,16 +114,9 @@ namespace PracticaKaraoke
 
             pbCancion.Maximum = reader.TotalTime.TotalSeconds;
             pbCancion.Value = reader.CurrentTime.TotalSeconds;
-
-            if (reader.CurrentTime == TimeSpan.FromSeconds(0.19))
-            {
-                txtLyrics.Text = "Something in me knew that it was real Frozen in my head Pictures I'm living through for now Trying to remember all the good times";
-            }
-            else if (reader.CurrentTime == TimeSpan.FromSeconds(0.38))
-            {
-                txtLyrics.Text = "Our life was cutting through so loud Memories are playing in my dull mind I hate this part, paper hearts";
-            }
+                        
             timer.Start();
+
         }
 
         private void Output_PlaybackStopped(object sender, StoppedEventArgs e)
